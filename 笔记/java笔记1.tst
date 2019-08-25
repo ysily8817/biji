@@ -109,10 +109,10 @@
 
 八、String类
 	A：构造方法：
-		public String()	//空构造
-		public String(byte[] bytes)	//把字节数组转化成字符串
+		*public String()	//空构造
+		*public String(byte[] bytes)	//把字节数组转化成字符串
 		public String(byte[] bytes, int offset, int length)	//把字节数组的一部分转成字符串，offset指从某个位置开始
-		public String(char[] value)	//把字符数组转成字符串
+		*public String(char[] value)	//把字符数组转成字符串
 		public String(char[] value, int offset, int length)	//把字符数组的一部分转成字符串
 		public String(String original)	//把字符串常量值转化成字符串
 		
