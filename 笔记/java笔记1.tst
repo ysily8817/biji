@@ -77,6 +77,18 @@
 	成员位置：在成员位置定义的类，被称为成员内部类
 	局部位置：在局部位置定义的类，被称为局部内部类，比如将内部类定义在外部类的方法中
 
+4、匿名内部类的定义格式
+	接口名 对象名 = new 接口名() {
+		//覆写抽象方法
+	};
+	
+	MyInterface obj = new MyInterface() {
+		@Override
+		public void method() {
+			System.out.print("匿名内部类实现了方法");
+		}
+	}
+	
 五、Eclipse常用配置
 	A：程序的编译和运行环境的配置
 		window -- Preferences -- Java
