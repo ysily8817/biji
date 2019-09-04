@@ -352,6 +352,7 @@
 		int year = c.get(cal.YEAR);
 		c.add(Calendar.YEAR, -3) //三年前的今天
 		c.set(2011, 11, 11)
+		Date date = c.getTime()//通过日历对象把日历转换为日期对象
 			
 	集合--------------------------------------------------------
 十九、Collection [kəˈlekʃn] 	
