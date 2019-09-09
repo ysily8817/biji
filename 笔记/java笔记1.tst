@@ -381,7 +381,11 @@
 	H:把数组转成集合；使用Arrays类中的asList(T... t)方法，接收一个可变参数
 		List<String> list = Arrays.asList("hello","world"); //可接收0个或多个参数
 		注意：因为转换后list集合仍是数组，所以长度不可变，故使用删除和添加时报错
-	I：遍历Iterator		
+	I：遍历Iterator	
+		通过集合获取迭代器对象
+		迭代器有两个常用方法
+			1、boolean hasNext()如果仍有元素可以迭代，则返回true
+			2、next()返回迭代的下一个元素--》取出集合中的下一个元素
 		Collection c = new ArrayList();
 		Iterator i = c.Iterator();	
 		while(i.hasNext()) {
