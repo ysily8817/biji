@@ -790,7 +790,7 @@
 	注意：同一个Thread线程对象只能调用一次start()方法，再次调用报错IllegalThreadStateException，因为线程已经启动了，
 			再次调用，表示又要启动一次，所以报错
 
-	A、获取线程名称
+	A、设置线程名称
 		//方法一
 		MyThread my1 = new MyThread(); //MyThread()自定义的线程类，继承Thread，重新run()方法，run方法的内容为多进程执行的代码
 		my1.setName("aaa");		//调用setName方法，给线程指定名称
@@ -900,8 +900,9 @@
 			}	
 		}
 	}
+	第二种实现方式的好处：避免了单继承，降低了耦合性，易于扩展，推荐使用第二种方式
 
-F、线程安全问题（卖票案例，会出现同票多卖，和负数票的问题）
+	F、线程安全问题（卖票案例，会出现同票多卖，和负数票的问题）
 	class SellTicker implements Runnable {
 		private int ticker = 100;
 		@Override
