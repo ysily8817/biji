@@ -38,10 +38,16 @@
 	
 三、反射技术
 	1、获取到Class类的三种方式
-		Class c1 = Person.Class;
-		Class c2 = new Person().getClass();
-		Class c3 = Class.forName("文件路径");	//最常用的方法
-	
+		a.Class.forName("全类名")：将字节码文件加载进内存，返回Class对象
+			Class c1 = Class.forName("文件路径");	//最常用的方法
+								多用于配置文件，将类名定义在配置文件中，读取文件，加载类
+		
+		b.类名.Class：通过类名的属性Class获取
+			Class c2 = Person.Class;	//多用于参数的传递
+			
+		c.对象.getClass():getClass()方法在Object类中定义着	
+			Class c3 = new Person().getClass();		//多用于对象的获取字节码的方式
+		
 	2、通过反射获取构造方法
 		//获取Class类
 		Class c1 = Class.forName("cn.itcast.test09.Person");
@@ -51,6 +57,13 @@
 		Person p1 = (Person)cs.newInstance("lisi", "001");
 		
 	3、通过反射获取属性
+		四种获取方法：(获取构造方法和普通方法也是四种，与下面类似)
+			Filed[] getFields();获取所有public修饰的成员变量
+			Filed getFields(String name);获取指定名称的 public修饰的成员变量
+			
+			Filed[] getDeclaredFields();获取所有的成员变量，不考虑修饰符
+			Filed getDeclaredField();获取指定名称的成员变量，不考虑修饰符
+	
 		//获取Class类
 		Class c1 = Class.forName("cn.itcast.test09.Person");
 		//得到Person类的实例
@@ -58,9 +71,11 @@
 		//获得属性的对象
 		Field f1 = p1.getDeclaredField("name");	//参数是属性的名称
 		//如果属性是私有的，使用以下方法，（私有方法也类似）
-		f1.setAccessible(true);
+		f1.setAccessible(true); //暴力反射
 		//通过set方法设置name的值，第一个参数是类的实例，第二个参数是设置的值
-		f1.set(p1, "wangwu");
+		f1.set(p1, "wangwu"); //设置属性的值
+		f1.get(Object obj); //获取值
+		f1.get(p1);
 	
 	4、通过反射获取普通方法
 		//得到Class类
